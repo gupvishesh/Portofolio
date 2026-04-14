@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { Mail, Github, Linkedin, Twitter, ArrowUpRight } from 'lucide-react';
+import { Mail, Github, Linkedin, ArrowUpRight } from 'lucide-react';
 
 export default function Contact() {
   return (
@@ -48,19 +48,16 @@ export default function Contact() {
               </div>
               <ArrowUpRight size={20} className="opacity-0 group-hover:opacity-100 transition-opacity" />
             </a>
-            <div className="grid grid-cols-3 gap-4">
-              <a href="https://github.com" target="_blank" rel="noreferrer" className="flex flex-col items-center gap-2 p-6 border border-[var(--color-line)] bg-white hover:bg-[var(--color-ink)] hover:text-[var(--color-bg)] transition-all">
+            <div className="grid grid-cols-2 gap-4">
+              <a href="https://github.com/gupvishesh" target="_blank" rel="noreferrer" className="flex flex-col items-center gap-2 p-6 border border-[var(--color-line)] bg-white hover:bg-[var(--color-ink)] hover:text-[var(--color-bg)] transition-all">
                 <Github size={20} />
                 <span className="font-mono text-[10px] uppercase tracking-widest">Github</span>
               </a>
-              <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="flex flex-col items-center gap-2 p-6 border border-[var(--color-line)] bg-white hover:bg-[var(--color-ink)] hover:text-[var(--color-bg)] transition-all">
+              <a href="https://linkedin.com/in/vishesh-gupta2110" target="_blank" rel="noreferrer" className="flex flex-col items-center gap-2 p-6 border border-[var(--color-line)] bg-white hover:bg-[var(--color-ink)] hover:text-[var(--color-bg)] transition-all">
                 <Linkedin size={20} />
                 <span className="font-mono text-[10px] uppercase tracking-widest">Linkedin</span>
               </a>
-              <a href="https://twitter.com" target="_blank" rel="noreferrer" className="flex flex-col items-center gap-2 p-6 border border-[var(--color-line)] bg-white hover:bg-[var(--color-ink)] hover:text-[var(--color-bg)] transition-all">
-                <Twitter size={20} />
-                <span className="font-mono text-[10px] uppercase tracking-widest">Twitter</span>
-              </a>
+
             </div>
           </div>
         </div>

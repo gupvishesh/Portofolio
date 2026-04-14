@@ -37,10 +37,10 @@ export default function Navbar() {
           </div>
           
           <div className="flex gap-4">
-            <a href="https://github.com" target="_blank" rel="noreferrer" className="hover:text-blue-600 transition-colors">
+            <a href="https://github.com/gupvishesh" target="_blank" rel="noreferrer" className="hover:text-blue-600 transition-colors">
               <Github size={18} />
             </a>
-            <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="hover:text-blue-600 transition-colors">
+            <a href="https://linkedin.com/in/vishesh-gupta2110" target="_blank" rel="noreferrer" className="hover:text-blue-600 transition-colors">
               <Linkedin size={18} />
             </a>
             <a href="mailto:visheshgupta1021@gmail.com" className="hover:text-blue-600 transition-colors">
