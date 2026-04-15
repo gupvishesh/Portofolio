@@ -25,7 +25,7 @@ export default function Projects() {
         </div>
         <div className="text-right">
           <p className="font-mono text-[10px] uppercase tracking-widest opacity-50 mb-1">Total Projects</p>
-          <p className="font-bold text-xl tracking-tight">15+</p>
+          <p className="font-bold text-xl tracking-tight">10+</p>
         </div>
       </div>
       

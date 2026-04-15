@@ -35,7 +35,7 @@ export default function Skills() {
         </div>
         <div className="text-right">
           <p className="font-mono text-[10px] uppercase tracking-widest opacity-50 mb-1">Last Updated</p>
-          <p className="font-bold text-xl tracking-tight">March 2026</p>
+          <p className="font-bold text-xl tracking-tight">April 2026</p>
         </div>
       </div>
       

@@ -1,4 +1,5 @@
 import { motion, useMotionValue, useSpring, useTransform } from 'motion/react';
+import profileImg from '../assets/profile.png';
 import { GraduationCap, Briefcase, Code2, Cpu, Database, Globe } from 'lucide-react';
 import React, { useRef } from 'react';
 
@@ -46,10 +47,9 @@ export default function About() {
             >
               {/* Profile Image with technical overlay */}
               <img 
-                src="https://picsum.photos/seed/developer/800/1000" 
+                src={profileImg}
                 alt="Vishesh Gupta"
-                className="w-full h-full object-cover opacity-60 grayscale group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700"
-                referrerPolicy="no-referrer"
+                className="w-full h-full object-cover object-top opacity-60 grayscale group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700"
               />
               
               {/* Scanning Line Animation */}
@@ -60,7 +60,7 @@ export default function About() {
               />
               
               {/* Technical Grid Overlay */}
-              <div className="absolute inset-0 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20" />
+              <div className="absolute inset-0 pointer-events-none opacity-10" style={{backgroundImage: 'repeating-linear-gradient(0deg, transparent, transparent 30px, rgba(0,0,0,0.05) 30px, rgba(0,0,0,0.05) 31px), repeating-linear-gradient(90deg, transparent, transparent 30px, rgba(0,0,0,0.05) 30px, rgba(0,0,0,0.05) 31px)'}} />
               
               {/* Floating Metadata Labels */}
               <div className="absolute top-4 left-4 font-mono text-[8px] uppercase tracking-widest text-white/50 space-y-1">
@@ -115,15 +115,15 @@ export default function About() {
             <div className="bg-[var(--color-bg)] p-8">
               <GraduationCap className="text-blue-600 mb-4" size={24} />
               <p className="col-header mb-2">Academic Background</p>
-              <h4 className="font-bold text-lg mb-2">B.Tech in CSE</h4>
-              <p className="text-sm opacity-60">Focusing on Distributed Systems, AI, and Software Design Patterns.</p>
+              <h4 className="font-bold text-lg mb-2">B.Tech in CSE (AI-ML)</h4>
+              <p className="text-sm opacity-60">KMIT, 2023–2027. Current GPA: 9.2/10. Focused on AI, ML, and Software Engineering.</p>
             </div>
             
             <div className="bg-[var(--color-bg)] p-8">
               <Briefcase className="text-blue-600 mb-4" size={24} />
               <p className="col-header mb-2">Professional Path</p>
-              <h4 className="font-bold text-lg mb-2">Full Stack Intern</h4>
-              <p className="text-sm opacity-60">Experienced in building end-to-end applications with modern tech stacks.</p>
+              <h4 className="font-bold text-lg mb-2">AI & Full Stack Dev</h4>
+              <p className="text-sm opacity-60">Building end-to-end applications — from VS Code extensions to voice AI systems.</p>
             </div>
 
             <div className="bg-[var(--color-bg)] p-8">
@@ -145,15 +145,15 @@ export default function About() {
             <div className="flex flex-wrap gap-12 relative z-10">
               <div>
                 <p className="col-header text-white/50 mb-1">Projects Completed</p>
-                <p className="text-4xl font-bold tracking-tighter">15+</p>
+                <p className="text-4xl font-bold tracking-tighter">10+</p>
               </div>
               <div>
                 <p className="col-header text-white/50 mb-1">LeetCode Problems</p>
-                <p className="text-4xl font-bold tracking-tighter">300+</p>
+                <p className="text-4xl font-bold tracking-tighter">500+</p>
               </div>
               <div>
-                <p className="col-header text-white/50 mb-1">Hackathons Won</p>
-                <p className="text-4xl font-bold tracking-tighter">03</p>
+                <p className="col-header text-white/50 mb-1">Hackathons</p>
+                <p className="text-4xl font-bold tracking-tighter">Semi-Finalist</p>
               </div>
             </div>
             <Database className="absolute -right-4 -bottom-4 text-white/5 w-32 h-32" />
