@@ -1,6 +1,6 @@
 import { motion, useMotionValue, useSpring, useTransform } from 'motion/react';
 import React, { useState, useEffect, useRef } from 'react';
-import { ChevronRight, Command, Target, Activity, Cpu, Globe } from 'lucide-react';
+import { ChevronRight, Command, Target, Activity, Cpu, Globe, Download } from 'lucide-react';
 
 export default function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -121,11 +121,13 @@ export default function Hero() {
           </h1>
 
           <p className="max-w-xl mx-auto text-lg md:text-xl opacity-70 leading-relaxed font-medium tracking-tight">
-            A passionate developer, problem solver, and tech enthusiast exploring 
-            the intersections of software engineering and artificial intelligence.
+            4th-year B.Tech CSE (AI/ML) @ KMIT · GPA 9.2/10 · Building production-grade
+            <span className="text-blue-600 font-bold"> Speech AI</span>,{' '}
+            <span className="text-[var(--color-ink)] font-bold">LLM systems</span> &amp; scalable full-stack platforms ·
+            Flipkart GRiD 7.0 National Semi-Finalist · 500+ LeetCode.
           </p>
 
-          <div className="pt-12 flex flex-wrap justify-center gap-6">
+          <div className="pt-12 flex flex-wrap justify-center gap-4">
             <motion.a 
               href="#projects"
               whileHover={{ scale: 1.05, y: -5 }}
@@ -146,6 +148,18 @@ export default function Hero() {
             >
               <Command size={16} />
               <span>Initialize Contact</span>
+            </motion.a>
+
+            <motion.a
+              href="https://drive.google.com/file/d/YOUR_RESUME_FILE_ID/view"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.05, y: -5 }}
+              whileTap={{ scale: 0.95 }}
+              className="px-8 py-4 border border-[var(--color-line)] font-bold uppercase tracking-widest text-xs flex items-center gap-3 hover:bg-[var(--color-ink)] hover:text-[var(--color-bg)] transition-all"
+            >
+              <Download size={16} />
+              <span>Resume</span>
             </motion.a>
           </div>
         </motion.div>

@@ -2,16 +2,23 @@ import { motion } from 'motion/react';
 import { SKILLS } from '../data';
 import * as Icons from 'lucide-react';
 
-export default function Skills() {
-  const categories = ['Languages', 'Frameworks', 'Tools', 'Databases'] as const;
+const CATEGORIES = ['Languages', 'Frameworks', 'Tools', 'AI/ML'] as const;
 
+const CATEGORY_LABELS: Record<string, string> = {
+  Languages: 'Languages & DBs',
+  Frameworks: 'Frameworks & Libraries',
+  Tools: 'Infrastructure & Tools',
+  'AI/ML': 'AI / ML',
+};
+
+export default function Skills() {
   return (
-    <motion.section 
-      id="skills" 
+    <motion.section
+      id="skills"
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-100px" }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
+      viewport={{ once: true, margin: '-100px' }}
+      transition={{ duration: 0.8, ease: 'easeOut' }}
       className="py-20 px-6 max-w-7xl mx-auto border-t border-[var(--color-line)]"
     >
       <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6 relative">
@@ -22,34 +29,34 @@ export default function Skills() {
         <div className="absolute -bottom-20 -left-20 opacity-[0.03] pointer-events-none">
           <Icons.Database size={300} />
         </div>
-        
+
         <div>
           <h2 className="text-4xl font-bold tracking-tighter uppercase mb-4">
             TECH <br />
             <span className="text-blue-600">STACK.</span>
           </h2>
           <p className="text-lg opacity-70 leading-relaxed max-w-md">
-            A comprehensive list of technologies I've worked with and mastered 
-            during my academic and project journey.
+            Languages, frameworks, infrastructure tools, and AI/ML technologies I've
+            applied across academic and production projects.
           </p>
         </div>
         <div className="text-right">
           <p className="font-mono text-[10px] uppercase tracking-widest opacity-50 mb-1">Last Updated</p>
-          <p className="font-bold text-xl tracking-tight">April 2026</p>
+          <p className="font-bold text-xl tracking-tight">June 2026</p>
         </div>
       </div>
-      
+
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-        {categories.map((category) => (
+        {CATEGORIES.map((category) => (
           <div key={category} className="p-8 border border-[var(--color-line)] bg-white/50">
             <h3 className="font-mono text-[10px] uppercase tracking-widest opacity-50 mb-6 border-b border-[var(--color-line)] pb-2">
-              {category}
+              {CATEGORY_LABELS[category]}
             </h3>
             <div className="flex flex-col gap-4">
-              {SKILLS.filter(s => s.category === category).map((skill) => {
+              {SKILLS.filter((s) => s.category === category).map((skill) => {
                 const Icon = (Icons as any)[skill.icon] || Icons.Code;
                 return (
-                  <motion.div 
+                  <motion.div
                     key={skill.name}
                     whileHover={{ x: 5 }}
                     className="flex items-center gap-3 group"

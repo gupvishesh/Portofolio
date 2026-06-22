@@ -36,10 +36,10 @@ export default function About() {
 
   return (
     <section id="about" className="py-32 px-6 max-w-7xl mx-auto border-t border-[var(--color-line)]">
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
         
         {/* Interactive Portrait Column */}
-        <div className="lg:col-span-5 sticky top-32">
+        <div className="sticky top-32">
           <div className="relative group" ref={containerRef} onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave}>
             <motion.div 
               style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
@@ -82,13 +82,13 @@ export default function About() {
             </div>
             <div className="p-4 border border-[var(--color-line)] bg-white/50">
               <p className="col-header mb-1">Current Year</p>
-              <p className="data-value text-sm font-bold">3rd Year B.Tech CSE</p>
+              <p className="data-value text-sm font-bold">4th Year B.Tech CSE</p>
             </div>
           </div>
         </div>
 
         {/* Technical Dossier Column */}
-        <div className="lg:col-span-7">
+        <div>
           <div className="mb-12">
             <h2 className="text-6xl font-bold tracking-tighter uppercase leading-[0.85] mb-8">
               SYSTEM <br />
@@ -96,17 +96,17 @@ export default function About() {
             </h2>
             <div className="space-y-6 text-lg opacity-80 leading-relaxed">
               <p>
-                As a 3rd-year Computer Science student, I operate at the intersection of 
-                <span className="text-[var(--color-ink)] font-bold"> rigorous logic </span> 
-                and <span className="text-blue-600 font-bold"> creative engineering</span>. 
-                My approach is systematic: analyze the problem, architect the solution, 
-                and optimize for the future.
+                As a 4th-year Computer Science student specializing in
+                <span className="text-blue-600 font-bold"> AI/ML</span>, I build production-grade
+                systems at the intersection of <span className="text-[var(--color-ink)] font-bold"> deep learning </span>
+                and <span className="text-blue-600 font-bold"> scalable engineering</span>.
+                From end-to-end speech AI pipelines to LLM-powered developer tools, my work solves real problems.
               </p>
               <p>
-                I don't just write code; I build digital experiences that are robust, 
-                scalable, and user-centric. My journey is defined by a relentless 
-                pursuit of technical excellence and a passion for solving real-world 
-                challenges through technology.
+                I don't just write code — I architect experiences that are low-latency,
+                robust, and production-ready. Driven by a 9.2/10 GPA, Flipkart GRiD 7.0
+                National Semi-Finalist recognition, and 500+ LeetCode problems, I bring both
+                academic rigor and engineering depth to every project.
               </p>
             </div>
           </div>
@@ -152,8 +152,8 @@ export default function About() {
                 <p className="text-4xl font-bold tracking-tighter">500+</p>
               </div>
               <div>
-                <p className="col-header text-white/50 mb-1">Hackathons</p>
-                <p className="text-4xl font-bold tracking-tighter">Semi-Finalist</p>
+                <p className="col-header text-white/50 mb-1">GPA</p>
+                <p className="text-4xl font-bold tracking-tighter">9.2/10</p>
               </div>
             </div>
             <Database className="absolute -right-4 -bottom-4 text-white/5 w-32 h-32" />

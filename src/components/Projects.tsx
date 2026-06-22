@@ -2,14 +2,16 @@ import { motion } from 'motion/react';
 import { PROJECTS } from '../data';
 import { Github, ExternalLink, ArrowRight } from 'lucide-react';
 
+const FALLBACK_IMG = 'https://picsum.photos/seed/fallback/800/600';
+
 export default function Projects() {
   return (
-    <motion.section 
-      id="projects" 
+    <motion.section
+      id="projects"
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-100px" }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
+      viewport={{ once: true, margin: '-100px' }}
+      transition={{ duration: 0.8, ease: 'easeOut' }}
       className="py-20 px-6 max-w-7xl mx-auto border-t border-[var(--color-line)]"
     >
       <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
@@ -19,8 +21,8 @@ export default function Projects() {
             <span className="text-blue-600">PROJECTS.</span>
           </h2>
           <p className="text-lg opacity-70 leading-relaxed max-w-md">
-            A showcase of my recent work, ranging from full-stack applications 
-            to AI-powered tools.
+            Production-grade systems spanning speech AI, LLM-powered tooling,
+            and scalable full-stack platforms.
           </p>
         </div>
         <div className="text-right">
@@ -28,39 +30,61 @@ export default function Projects() {
           <p className="font-bold text-xl tracking-tight">10+</p>
         </div>
       </div>
-      
+
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {PROJECTS.map((project) => (
-          <motion.div 
+          <motion.div
             key={project.id}
             whileHover={{ y: -5 }}
-            className="group border border-[var(--color-line)] bg-white overflow-hidden flex flex-col"
+            className="group border border-[var(--color-line)] bg-white overflow-hidden flex flex-col cursor-pointer"
+            onClick={() => {
+              const url = project.liveUrl || project.githubUrl;
+              if (url) window.open(url, '_blank', 'noopener,noreferrer');
+            }}
           >
             <div className="relative aspect-video overflow-hidden border-b border-[var(--color-line)]">
-              <img 
-                src={project.image} 
+              <img
+                src={project.image}
                 alt={project.title}
+                loading="lazy"
                 className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500"
-                referrerPolicy="no-referrer"
+                onError={(e) => {
+                  (e.target as HTMLImageElement).src = FALLBACK_IMG;
+                }}
               />
-              <div className="absolute top-4 right-4 flex gap-2">
+              <div className="absolute top-4 right-4 flex gap-2" onClick={(e) => e.stopPropagation()}>
                 {project.githubUrl && (
-                  <a href={project.githubUrl} className="p-2 bg-[var(--color-bg)]/80 backdrop-blur-md border border-[var(--color-line)] hover:bg-[var(--color-ink)] hover:text-[var(--color-bg)] transition-colors">
+                  <a
+                    href={project.githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`${project.title} GitHub repository`}
+                    className="p-2 bg-[var(--color-bg)]/80 backdrop-blur-md border border-[var(--color-line)] hover:bg-[var(--color-ink)] hover:text-[var(--color-bg)] transition-colors"
+                  >
                     <Github size={14} />
                   </a>
                 )}
                 {project.liveUrl && (
-                  <a href={project.liveUrl} className="p-2 bg-[var(--color-bg)]/80 backdrop-blur-md border border-[var(--color-line)] hover:bg-[var(--color-ink)] hover:text-[var(--color-bg)] transition-colors">
+                  <a
+                    href={project.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`${project.title} live demo`}
+                    className="p-2 bg-[var(--color-bg)]/80 backdrop-blur-md border border-[var(--color-line)] hover:bg-[var(--color-ink)] hover:text-[var(--color-bg)] transition-colors"
+                  >
                     <ExternalLink size={14} />
                   </a>
                 )}
               </div>
             </div>
-            
+
             <div className="p-6 flex-grow flex flex-col">
               <div className="flex flex-wrap gap-2 mb-4">
-                {project.tags.map(tag => (
-                  <span key={tag} className="font-mono text-[9px] uppercase tracking-widest px-2 py-1 border border-[var(--color-line)] opacity-50">
+                {project.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="font-mono text-[9px] uppercase tracking-widest px-2 py-1 border border-[var(--color-line)] opacity-50"
+                  >
                     {tag}
                   </span>
                 ))}
@@ -71,8 +95,27 @@ export default function Projects() {
               <p className="text-sm opacity-70 leading-relaxed mb-6 flex-grow">
                 {project.description}
               </p>
-              <div className="flex items-center gap-2 font-mono text-[10px] uppercase tracking-widest font-bold group-hover:translate-x-2 transition-transform">
-                Read More <ArrowRight size={12} />
+              <div className="flex items-center gap-3 mt-auto pt-2" onClick={(e) => e.stopPropagation()}>
+                {project.githubUrl && (
+                  <a
+                    href={project.githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 font-mono text-[10px] uppercase tracking-widest font-bold border border-[var(--color-line)] px-3 py-2 hover:bg-[var(--color-ink)] hover:text-[var(--color-bg)] transition-colors duration-200"
+                  >
+                    <Github size={11} /> GitHub <ArrowRight size={10} />
+                  </a>
+                )}
+                {project.liveUrl && (
+                  <a
+                    href={project.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 font-mono text-[10px] uppercase tracking-widest font-bold border border-blue-600 text-blue-600 px-3 py-2 hover:bg-blue-600 hover:text-white transition-colors duration-200"
+                  >
+                    <ExternalLink size={11} /> Live Demo <ArrowRight size={10} />
+                  </a>
+                )}
               </div>
             </div>
           </motion.div>

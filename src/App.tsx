@@ -3,9 +3,12 @@ import Hero from './components/Hero';
 import About from './components/About';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
+import LeetCode from './components/LeetCode';
+import Achievements from './components/Achievements';
 import Contact from './components/Contact';
 import Background from './components/Background';
 import CustomCursor from './components/CustomCursor';
+import BackToTop from './components/BackToTop';
 
 export default function App() {
   return (
@@ -14,14 +17,19 @@ export default function App() {
       <Background />
       <CustomCursor />
       <div className="fixed inset-0 pointer-events-none z-50 opacity-[0.03] bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] mix-blend-overlay" />
-      
+
       {/* Content */}
       <Navbar />
       <Hero />
       <About />
       <Skills />
       <Projects />
+      <LeetCode />
+      <Achievements />
       <Contact />
+
+      {/* Utilities */}
+      <BackToTop />
     </main>
   );
 }

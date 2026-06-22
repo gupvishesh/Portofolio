@@ -66,9 +66,10 @@ export default function Contact() {
           <div className="p-12 border border-[var(--color-line)] bg-[var(--color-ink)] text-[var(--color-bg)] relative overflow-hidden">
             <div className="relative z-10">
               <h3 className="text-3xl font-bold tracking-tighter mb-4">Availability</h3>
-              <p className="opacity-70 mb-8">
-                Currently looking for 2026 Summer Internships and Full-time 
-                roles starting 2027.
+              <p className="opacity-70 mb-4">
+                Open to <span className="font-bold text-white">SDE internships</span> and
+                <span className="font-bold text-white"> full-time roles</span> starting 2027.
+                Specializing in Full Stack + AI/ML engineering.
               </p>
               <div className="flex items-center gap-3">
                 <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse" />
@@ -85,7 +86,7 @@ export default function Contact() {
               © 2026 VISHESH GUPTA. ALL RIGHTS RESERVED.
             </p>
             <p className="font-mono text-[10px] uppercase tracking-widest opacity-50">
-              BUILT WITH REACT & TAILWIND
+              BUILT WITH REACT & VITE
             </p>
           </div>
         </div>

@@ -11,5 +11,20 @@ export interface Project {
 export interface Skill {
   name: string;
   icon: string;
-  category: 'Languages' | 'Frameworks' | 'Tools' | 'Databases';
+  category: 'Languages' | 'Frameworks' | 'Tools' | 'Databases' | 'AI/ML';
+}
+
+export interface Achievement {
+  title: string;
+  subtitle: string;
+  description: string;
+  icon: string;
+  highlight?: string;
+}
+
+export interface Certification {
+  title: string;
+  issuer: string;
+  description: string;
+  icon: string;
 }
